@@ -37,3 +37,11 @@ Route::get('/logout', [\App\Http\Controllers\LoginController::class, 'logout'])-
 route::group(['middleware' => ['auth']], function () {
     Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });
+
+
+route::group(['prefix' => 'mhs'], function () {
+    Route::get('/', [\App\Http\Controllers\MahasiswaController::class, 'show'])->name('mhs.show');
+    Route::get('/create', [\App\Http\Controllers\MahasiswaController::class, 'create'])->name('mhs.create');
+    Route::get('/edit', [\App\Http\Controllers\MahasiswaController::class, 'edit'])->name('mhs.edit');
+    Route::post('/store', [\App\Http\Controllers\MahasiswaController::class, 'store'])->name('mhs.store');
+});

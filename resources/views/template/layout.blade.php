@@ -4,28 +4,30 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
     <title>App Beasiswa</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="{{ asset('template/vendors/feather/feather.css') }}" />
-    <link rel="stylesheet" href="{{ asset('template/vendors/ti-icons/css/themify-icons.css') }}" />
-    <link rel="stylesheet" href="{{ asset('template/vendors/css/vendor.bundle.base.css') }}" />
+    <link href="{{ asset('template/vendors/feather/feather.css') }}" rel="stylesheet" />
+    <link href="{{ asset('template/vendors/ti-icons/css/themify-icons.css') }}" rel="stylesheet" />
+    <link href="{{ asset('template/vendors/css/vendor.bundle.base.css') }}" rel="stylesheet" />
     <!-- endinject -->
     <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="{{ asset('template/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}" />
-    <link rel="stylesheet" href="{{ asset('template/vendors/ti-icons/css/themify-icons.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('template/js/select.dataTables.min.css') }}" />
+    <link href="{{ asset('template/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}" rel="stylesheet" />
+    <link href="{{ asset('template/vendors/ti-icons/css/themify-icons.css') }}" rel="stylesheet" />
+    <link href="{{ asset('template/js/select.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="{{ asset('template/css/vertical-layout-light/style.css') }}" />
+    <link href="{{ asset('template/css/vertical-layout-light/style.css') }}" rel="stylesheet" />
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{ asset('template/images/favicon.png') }}" />
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+
+    <link href="{{ asset('template/images/favicon.png') }}" rel="shortcut icon" />
     @yield('style')
     <style>
         .change::-webkit-input-placeholder {
-    /* WebKit, Blink, Edge */
-    color: rgb(255, 255, 255);
-}
+            /* WebKit, Blink, Edge */
+            color: rgb(255, 255, 255);
+        }
     </style>
 
 </head>
@@ -37,7 +39,7 @@
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center bg-primary ">
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-first bg-primary text-light">
-                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                <button class="navbar-toggler navbar-toggler align-self-center" data-toggle="minimize" type="button">
                     <span class="icon-menu"></span>
                 </button>
                 <ul class="navbar-nav mr-lg-2">
@@ -48,15 +50,15 @@
                                     <i class="icon-search text-white"></i>
                                 </span>
                             </div>
-                            <input type="text" class="form-control " id="navbar-search-input" value="Search now"
-                                aria-label="search" aria-describedby="search" style="color: white;">
+                            <input aria-describedby="search" aria-label="search" class="form-control "
+                                id="navbar-search-input" style="color: white;" type="text" value="Search now">
                         </div>
                     </li>
                 </ul>
-        
 
-                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
-                    data-toggle="offcanvas">
+
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" data-toggle="offcanvas"
+                    type="button">
                     <span class="icon-menu"></span>
                 </button>
             </div>
@@ -109,10 +111,6 @@
     <script src="{{ asset('template/js/template.js') }}"></script>
     <script src="{{ asset('template/js/settings.js') }}"></script>
     <script src="{{ asset('template/js/todolist.js') }}"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <script src="{{ asset('template/js/dashboard.js') }}"></script>
-    <script src="{{ asset('template/js/Chart.roundedBarCharts.js') }}"></script>
     <!-- End custom js for this page-->
     @yield('script')
     <script>
