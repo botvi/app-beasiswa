@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Sisfo SDIT</title>
+    <title>Beasiswa- Uniks</title>
     <!-- plugins:css -->
     <link href="{{ asset('dist/css/feather/feather.css') }}" rel="stylesheet">
     <link href="{{ asset('dist/css/ti-icons/css/themify-icons.css') }}" rel="stylesheet">
@@ -19,7 +19,7 @@
     <!-- inject:css -->
     <link href="{{ asset('dist/css/vertical-layout/style.css') }}" rel="stylesheet">
     <!-- endinject -->
-    <link href="{{ asset('landing-page') }}/assets/img/sdit/favicon.ico" rel="shortcut icon" />
+    <link href="{{ asset('landing-page') }}/assets/img/beasiswa/favicon.ico" rel="shortcut icon" />
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">

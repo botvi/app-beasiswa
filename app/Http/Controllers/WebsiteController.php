@@ -15,5 +15,15 @@ class WebsiteController extends Controller
     {
         return view('website.kontak');
     }
+    public function about()
+    {
+        return view('website.about');
+    }
+    
+    public function infobeasiswa()
+    {
+        return view('website.infobeasiswa');
+    }
+   
 
 }

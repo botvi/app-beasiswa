@@ -1,105 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Tivo is a HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
-    <meta name="author" content="Inovatik">
-
-    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-	<meta property="og:site_name" content="" /> <!-- website name -->
-	<meta property="og:site" content="" /> <!-- website link -->
-	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
-	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
-	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
-	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
-	<meta property="og:type" content="article" />
-
-    <!-- Website Title -->
     <title>Beasiswa- Uniks</title>
-    
-    <!-- Styles -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
-    <link href="{{ asset('landing-page') }}/css/bootstrap.css" rel="stylesheet">
-    <link href="{{ asset('landing-page') }}/css/fontawesome-all.css" rel="stylesheet">
-    <link href="{{ asset('landing-page') }}/css/swiper.css" rel="stylesheet">
-	<link href="{{ asset('landing-page') }}/css/magnific-popup.css" rel="stylesheet">
-	<link href="{{ asset('landing-page') }}/css/styles.css" rel="stylesheet">
-	
-	<!-- Favicon  -->
-    <link rel="icon" href="{{ asset('landing-page') }}/images/favicon.ico">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="{{ asset('website') }}/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{ asset('website') }}/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="{{ asset('website') }}/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ asset('website') }}/css/style.css" rel="stylesheet">
+    @yield('style')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.4.0/css/fixedHeader.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+
 </head>
-<body data-spy="scroll" data-target=".fixed-top">
-    
-    <!-- Preloader -->
-	<div class="spinner-wrapper">
-        <div class="spinner">
-            <div class="bounce1"></div>
-            <div class="bounce2"></div>
-            <div class="bounce3"></div>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid">
+
+        <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
+            <div class="col-lg-4">
+                <a href="" class="text-decoration-none">
+                    <span class="h1 text-uppercase text-primary bg-dark px-2">BEASISWA</span>
+                    <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">UNIKS</span>
+                </a>
+            </div>
         </div>
     </div>
-    <!-- end of preloader -->
-    
+    <!-- Topbar End -->
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-        <div class="container">
 
-            <!-- Text Logo - Use this if you don't have a graphic logo -->
-            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-dark mb-30">
+        <div class="row px-xl-5">
+            <div class="col-lg-9">
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
+                    <a href="" class="text-decoration-none d-block d-lg-none">
+                        <span class="h1 text-uppercase text-dark bg-light px-2">BEASISWA</span>
+                        <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">UNIKS</span>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+                            <a href="/" class="nav-item nav-link active">Home</a>
+                            <a href="/infobeasiswa" class="nav-item nav-link">Info Beasiswa</a>
+                            <a href="/berita" class="nav-item nav-link">Berita</a>
+                            <a href="/about" class="nav-item nav-link">About</a>
+                            <a href="/kontak" class="nav-item nav-link">Contact</a>
+                            <div class="navbar-nav mr-auto p-2">
+                                <a href="/login" class="btn btn-primary">Login</a>
+                                &nbsp;&nbsp;
+                                <a href="/daftar" class="btn btn-secondary">Daftar</a>
 
-            <!-- Image Logo -->
-            {{-- <a class="navbar-brand logo-image" href="index.html"><img src="{{ asset('landing-page') }}/images/logo.svg" alt="alternative"></a> 
-             --}}
-             <h2 class="text-dark">UNIKS</h2>
-            
-            <!-- Mobile Menu Toggle Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-awesome fas fa-bars"></span>
-                <span class="navbar-toggler-awesome fas fa-times"></span>
-            </button>
-            <!-- end of mobile menu toggle button -->
+                            </div>
 
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="/">HOME <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="/berita">BERITA <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="/kontak">KONTAK <span class="sr-only">(current)</span></a>
-                    </li>
-                  
-                <span class="nav-item">
-                    <a class="btn-outline-sm" href="/login">LOG IN</a>
-                </span>
-                <span class="nav-item">
-                    <a class="btn-outline-sm" href="/daftar">DAFTAR</a>
-                </span>
+                        </div>
+
+                    </div>
+                </nav>
             </div>
-        </div> <!-- end of container -->
-    </nav> <!-- end of navbar -->
-    <!-- end of navigation -->
+        </div>
+    </div>
+    <!-- Navbar End -->
 
+
+    <!-- Content -->
 
     @yield('content')
 
+    <!-- Content -->
 
 
-    	
-    <!-- Scripts -->
-    <script src="{{ asset('landing-page') }}/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="{{ asset('landing-page') }}/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="{{ asset('landing-page') }}/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="{{ asset('landing-page') }}/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="{{ asset('landing-page') }}/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    <script src="{{ asset('landing-page') }}/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
-    <script src="{{ asset('landing-page') }}/js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-    <script src="{{ asset('landing-page') }}/js/scripts.js"></script> <!-- Custom scripts -->
+
+    <!-- Back to Top -->
+
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    @yield('script')
+
+
+    <!-- JavaScript Libraries -->
+    {{-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> --}}
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/3.4.0/js/dataTables.fixedHeader.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+    <script src="{{ asset('website') }}/lib/easing/easing.min.js"></script>
+    <script src="{{ asset('website') }}/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="{{ asset('website') }}/mail/jqBootstrapValidation.min.js"></script>
+    <script src="{{ asset('website') }}/mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{ asset('website') }}/js/main.js"></script>
+    <script>
+        new DataTable('#example', {
+            fixedHeader: true,
+            responsive: true
+        });
+    </script>
 </body>
+
 </html>

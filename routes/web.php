@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\WebsiteController::class, "index"]);
 Route::get('/kontak', [\App\Http\Controllers\WebsiteController::class, 'kontak']);
+Route::get('/about', [\App\Http\Controllers\WebsiteController::class, 'about']);
+Route::get('/infobeasiswa', [\App\Http\Controllers\WebsiteController::class, 'infobeasiswa']);
 Route::group([
     'prefix' => "berita"
 ], function ($router) {
@@ -36,6 +38,8 @@ Route::get('/logout', [\App\Http\Controllers\LoginController::class, 'logout'])-
 
 route::group(['middleware' => ['auth']], function () {
     Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/profil', [\App\Http\Controllers\HomeController::class, 'profil']);
+
 });
 
 Route::group([

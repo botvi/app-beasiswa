@@ -14,12 +14,6 @@
             </a>
         </li>
      
-        <li class="nav-item">
-            <a class="nav-link" href="/login/logout">
-                <i class="ti-power-off menu-icon"></i>
-                <span class="menu-title">Log Out</span>
-            </a>
-        </li>
 
     </ul>
 </nav>
