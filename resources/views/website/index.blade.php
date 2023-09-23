@@ -1,61 +1,51 @@
 @extends('website.layout')
 @section('content')
-    <!-- Header -->
-    <header id="header" class="header">
-        <div class="header-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="text-container">
-                            <h1>BEASISWA</h1>
-                            <p class="p-large">Universitas Islam Kuantan Singingi (UNIKS)</p>
-                            {{-- <a class="btn-solid-lg page-scroll" href="sign-up.html">DAFTAR</a> --}}
-                        </div> <!-- end of text-container -->
-                    </div> <!-- end of col -->
-                    <div class="col-lg-4 text-end">
-                        <div class="image-container">
-                            <div class="img-wrapper">
-                                <img class="img-fluid" src="{{ asset('landing-page') }}/images/uniks.png" alt="alternative">
-                            </div> <!-- end of img-wrapper -->
-                        </div> <!-- end of image-container -->
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of header-content -->
-    </header> <!-- end of header -->
+    <!-- Carousel Start -->
+    <div class="container-fluid mb-3">
+        <div class="row px-xl-5">
+            <div class="col-lg-8">
+                <div id="header-carousel" class="carousel slide carousel-fade mb-30 mb-lg-0" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#header-carousel" data-slide-to="1"></li>
+                        <li data-target="#header-carousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item position-relative active" style="height: 430px;">
+                            <img class="position-absolute w-100 h-100" src="{{ asset('website') }}/img/c1.jpg"
+                                style="object-fit: cover;">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
 
-    {{-- <svg class="header-frame" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
-        viewBox="0 0 1920 310">
-        <defs>
-            <style>
-                .cls-1 {
-                    fill: #5f4def;
-                }
-            </style>
-        </defs>
-        <title>header-frame</title>
-        <path class="cls-1"
-            d="M0,283.054c22.75,12.98,53.1,15.2,70.635,14.808,92.115-2.077,238.3-79.9,354.895-79.938,59.97-.019,106.17,18.059,141.58,34,47.778,21.511,47.778,21.511,90,38.938,28.418,11.731,85.344,26.169,152.992,17.971,68.127-8.255,115.933-34.963,166.492-67.393,37.467-24.032,148.6-112.008,171.753-127.963,27.951-19.26,87.771-81.155,180.71-89.341,72.016-6.343,105.479,12.388,157.434,35.467,69.73,30.976,168.93,92.28,256.514,89.405,100.992-3.315,140.276-41.7,177-64.9V0.24H0V283.054Z" />
-    </svg> --}}
-    <!-- end of header -->
+                            </div>
+                        </div>
+                        <div class="carousel-item position-relative" style="height: 430px;">
+                            <img class="position-absolute w-100 h-100" src="{{ asset('website') }}/img/c2.jpg"
+                                style="object-fit: cover;">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
 
+                            </div>
+                        </div>
+                        <div class="carousel-item position-relative" style="height: 430px;">
+                            <img class="position-absolute w-100 h-100" src="{{ asset('website') }}/img/c3.jpg"
+                                style="object-fit: cover;">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="product-offer mb-30" style="height: 200px;">
+                    <img class="img-fluid" src="{{ asset('website') }}/img/c4.jpg" alt="">
 
+                </div>
+                <div class="product-offer mb-30" style="height: 200px;">
+                    <img class="img-fluid" src="{{ asset('website') }}/img/c2.jpg" alt="">
 
-    <!-- Details -->
-    <div id="details" class="basic-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="text-container">
-                        <h2>INFORMASI BEASISWA</h2>
-                        <p>Target the right customers for your business with the help of Tivo's patented segmentation
-                            technology and deploy efficient marketing campaigns. Keep your customers happy and loyal.</p>
-                        {{-- <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a> --}}
-                    </div> <!-- end of text-container -->
-
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of basic-1 -->
-        <!-- end of details -->
-    @endsection
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+@endsection
