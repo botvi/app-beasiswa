@@ -18,7 +18,7 @@
 	<meta property="og:type" content="article" />
 
     <!-- Website Title -->
-    <title>Tivo - SaaS App HTML Landing Page Template</title>
+    <title>Beasiswa- Uniks</title>
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
@@ -29,7 +29,7 @@
 	<link href="{{ asset('landing-page') }}/css/styles.css" rel="stylesheet">
 	
 	<!-- Favicon  -->
-    <link rel="icon" href="{{ asset('landing-page') }}/images/favicon.png">
+    <link rel="icon" href="{{ asset('landing-page') }}/images/favicon.ico">
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
     
@@ -52,7 +52,9 @@
             <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.html"><img src="{{ asset('landing-page') }}/images/logo.svg" alt="alternative"></a> 
+            {{-- <a class="navbar-brand logo-image" href="index.html"><img src="{{ asset('landing-page') }}/images/logo.svg" alt="alternative"></a> 
+             --}}
+             <h2 class="text-dark">UNIKS</h2>
             
             <!-- Mobile Menu Toggle Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,34 +66,20 @@
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
+                        <a class="nav-link page-scroll" href="/">HOME <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#features">FEATURES</a>
+                        <a class="nav-link page-scroll" href="/berita">BERITA <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#details">DETAILS</a>
+                        <a class="nav-link page-scroll" href="/kontak">KONTAK <span class="sr-only">(current)</span></a>
                     </li>
-
-                    <!-- Dropdown Menu -->          
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle page-scroll" href="#video" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">VIDEO</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="article-details.html"><span class="item-text">ARTICLE DETAILS</span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMS CONDITIONS</span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACY POLICY</span></a>
-                        </div>
-                    </li>
-                    <!-- end of dropdown menu -->
-
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#pricing">PRICING</a>
-                    </li>
-                </ul>
+                  
                 <span class="nav-item">
-                    <a class="btn-outline-sm" href="log-in.html">LOG IN</a>
+                    <a class="btn-outline-sm" href="/login">LOG IN</a>
+                </span>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="/daftar">DAFTAR</a>
                 </span>
             </div>
         </div> <!-- end of container -->

@@ -612,7 +612,7 @@ input[type='checkbox'] {
 	width: 1rem;
 	height: 1rem;
 	border-radius: 100%;
-	background-color: #5f4dee;
+	background-color: #ffee00;
 	-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
 	animation: sk-bouncedelay 1.4s infinite ease-in-out both;
 }
@@ -649,7 +649,7 @@ input[type='checkbox'] {
 /*     03. Navigation     */
 /**************************/
 .navbar-custom {
-	background-color: #5f4dee;
+	background-color: #110091;
 	box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1);
 	font: 700 0.875rem/0.875rem "Open Sans", sans-serif;
 	transition: all 0.2s;
@@ -677,7 +677,7 @@ input[type='checkbox'] {
 
 .navbar-custom .nav-item .nav-link {
 	padding: 0.625rem 0.75rem 0.625rem 0.75rem;
-	color: #f7f5f5;
+	color: #424242;
 	opacity: 0.8;
 	text-decoration: none;
 	transition: all 0.2s ease;
@@ -685,7 +685,7 @@ input[type='checkbox'] {
 
 .navbar-custom .nav-item .nav-link:hover,
 .navbar-custom .nav-item .nav-link.active {
-	color: #fff;
+	color: rgb(0, 0, 0);
 	opacity: 1;
 }
 
@@ -744,13 +744,13 @@ input[type='checkbox'] {
 	margin-top: 0.25rem;
 	margin-bottom: 1.375rem;
 	margin-left: 0.5rem;
-	border: 0.125rem solid #fff;
-	color: #fff;
+	border: 0.125rem solid rgb(0, 0, 0);
+	color: rgb(0, 0, 0);
 }
 
 .navbar-custom .nav-item .btn-outline-sm:hover {
-	background-color: #fff;
-	color: #5f4dee;
+	background-color: rgb(255, 242, 0);
+	color: #000000;
 }
 
 .navbar-custom .navbar-toggler {
@@ -782,7 +782,7 @@ input[type='checkbox'] {
 /*    04. Header     */
 /*********************/
 .header {
-	background-color: #5f4dee;
+	background-color: #f7ff80;
 }
 
 .header .header-content {
@@ -797,37 +797,37 @@ input[type='checkbox'] {
 
 .header h1 {
 	margin-bottom: 1rem;
-	color: #fff;
+	color: rgb(78, 78, 78);
 	font-size: 2.5rem;
 	line-height: 3rem;
 }
 
 .header .p-large {
 	margin-bottom: 2rem;
-	color: #f3f7fd;
+	color: rgb(78, 78, 78);
 }
 
 .header .btn-solid-lg {
 	margin-right: 0.5rem;
 	margin-bottom: 1.125rem;
 	margin-left: 0.5rem;
-	border-color: #f3f7fd;
-	background-color: #f3f7fd;
-	color: #5f4dee;
+	border-color: #424242;
+	background-color: #ffff00;
+	color: #424242;
 }
 
 .header .btn-solid-lg:hover {
 	background: transparent;
-	color: #f3f7fd;
+	color: rgb(78, 78, 78);
 }
 
 .header .btn-outline-lg {
-	border-color: #f3f7fd;
-	color: #f3f7fd;
+	border-color: rgb(78, 78, 78);
+	color: rgb(78, 78, 78);
 }
 
 .header .btn-outline-lg:hover {
-	background-color: #f3f7fd;
+	background-color: rgb(78, 78, 78);
 	color: #5f4dee;
 }
 
@@ -1497,7 +1497,7 @@ a:hover.back-to-top {
 .ex-header {
 	padding-top: 8rem;
 	padding-bottom: 5rem;
-	background-color: #5f4dee;
+	background-color: #f7ff80;
 	text-align: center;
 }
 
@@ -1744,13 +1744,13 @@ a:hover.back-to-top {
 
 	.navbar-custom.top-nav-collapse {
         padding: 0.5rem 1.5rem 0.5rem 2rem;
-		background-color: #5f4dee;
+		background-color: #f7ff80;
 		box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1);
 	}
 
 	.navbar-custom.top-nav-collapse .nav-item .nav-link:hover,
 	.navbar-custom.top-nav-collapse .nav-item .nav-link.active {
-		color: #fff;
+		color: rgb(0, 0, 0);
 	}
 
 	.navbar-custom .dropdown-menu {

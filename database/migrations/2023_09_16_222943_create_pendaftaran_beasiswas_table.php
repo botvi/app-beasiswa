@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pendaftaran_beasiswas', function (Blueprint $table) {
+        Schema::create('pendaftaran_beasiswa', function (Blueprint $table) {
             $table->id();
             $table->integer("mahasiswa_id");
             $table->integer("beasiswa_id");
             $table->text("keterangan");
             $table->string("dokument");
-            $table->enum('status', ['Aktif', 'Nonaktif'])->default('Aktif');
+            $table->string('status');
+            $table->text("catatan")->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pendaftaran_beasiswas');
+        Schema::dropIfExists('pendaftaran_beasiswa');
     }
 };

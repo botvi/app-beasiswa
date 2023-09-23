@@ -1,4 +1,11 @@
-@extends('template.layout')
+@extends('Layout.main')
+@section('style')
+    <style>
+        thead th {
+            color: #111 !important;
+        }
+    </style>
+@endsection
 @section('content')
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card shadow-lg">
@@ -43,7 +50,7 @@
                                     <td>{{ $mahasiswa->ipk }}</td>
                                     <td><span class="badge badge-success">{{ $mahasiswa->status }}</span></td>
                                     <td>
-                                        <div style="width:100%; flex; justify-content: space-between; align-item:center">
+                                        <div style="width:100px; flex; justify-content: space-between; align-item:center">
                                             <a class="text-success" href="/mhs/edit"
                                                 style="font-size: 1.3rem; margin-right:.5rem ">
                                                 <i class="fa fa-edit"></i></a>

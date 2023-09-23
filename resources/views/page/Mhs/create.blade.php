@@ -1,4 +1,4 @@
-@extends('template.layout')
+@extends('Layout.main')
 @section('content')
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card shadow-lg">
@@ -193,7 +193,7 @@
                             </div>
                         </div> --}}
                         <div class="col-md-12" style="display: flex; justify-content: flex-end">
-                            <button class="btn btn-primary" type="submit">Simpan</button>
+                            <button class="btn btn-primary bg-blue-500" type="submit">Simpan</button>
                         </div>
                     </div>
                 </form>

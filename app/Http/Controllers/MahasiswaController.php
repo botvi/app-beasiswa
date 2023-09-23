@@ -38,6 +38,7 @@ class MahasiswaController extends Controller
             'nama' => $request->input('nama'),
             'username' => $request->input('username'),
             'password' => bcrypt($request->input('password')),
+            'role' => 'mahasiswa'
         ]);
 
 
@@ -57,7 +58,7 @@ class MahasiswaController extends Controller
 
         $mahasiswa->save();
 
-        return redirect()->route('page.Mhs.show_mhs')->with('success', 'Mahasiswa berhasil ditambahkan.');
+        return redirect()->route('show_mhs')->with('success', 'Mahasiswa berhasil ditambahkan.');
     }
 
 

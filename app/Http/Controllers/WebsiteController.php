@@ -10,17 +10,10 @@ class WebsiteController extends Controller
     {
         return view('website.index');
     }
-    // public function about()
-    // {
-    //     return view('website.about');
-    // }
-    // public function kontak()
-    // {
-    //     return view('website.kontak');
-    // }
-    // public function visimisi()
-    // {
-    //     return view('website.visimisi');
-    // }
-   
+
+    public function kontak()
+    {
+        return view('website.kontak');
+    }
+
 }
