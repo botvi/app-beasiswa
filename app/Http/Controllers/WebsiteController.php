@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Beasiswa;
 use Illuminate\Http\Request;
 
 class WebsiteController extends Controller
@@ -19,11 +20,10 @@ class WebsiteController extends Controller
     {
         return view('website.about');
     }
-    
+
     public function infobeasiswa()
     {
-        return view('website.infobeasiswa');
+        $beasiswa = Beasiswa::where("status", "Aktif")->orderBy("id")->get();
+        return view('website.infobeasiswa', compact('beasiswa'));
     }
-   
-
 }

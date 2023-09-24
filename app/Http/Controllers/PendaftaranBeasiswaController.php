@@ -11,35 +11,61 @@ class PendaftaranBeasiswaController extends Controller
 {
     public function index()
     {
+
         if (auth()->user()->role == 'mahasiswa') {
+            $vw = '';
             $mhs = Mahasiswa::where("user_id", auth()->user()->id)->first();
             $PendaftaranBeasiswa = PendaftaranBeasiswa::where("mahasiswa_id", $mhs->id)->with([
                 "mahasiswa", "beasiswa"
             ])->orderBy("id", "desc")->get();
-            return view('page.Beasiswa.show_pengajuan', compact('PendaftaranBeasiswa'));
+            return view('page.Beasiswa.show_pengajuan', compact('PendaftaranBeasiswa', 'vw'));
         }
+        $vw = 'pengajuan';
         $PendaftaranBeasiswa = PendaftaranBeasiswa::where("status", "Dalam Proses")
             ->with([
                 "mahasiswa", "beasiswa"
             ])->orderBy("id", "desc")->get();
-        return view('page.Beasiswa.show_pengajuan', compact('PendaftaranBeasiswa'));
+        return view('page.Beasiswa.show_pengajuan', compact('PendaftaranBeasiswa', 'vw'));
     }
     public function getAccept()
     {
+        $vw = 'print';
+        $report = "print-accept";
         $PendaftaranBeasiswa = PendaftaranBeasiswa::where("status", "Diterima")
             ->with([
                 "mahasiswa", "beasiswa"
             ])->orderBy("id", "desc")->get();
-        return view('page.Beasiswa.show_pengajuan', compact('PendaftaranBeasiswa'));
+        return view('page.Beasiswa.show_pengajuan', compact('PendaftaranBeasiswa', 'vw', 'report'));
     }
 
     public function getReject()
     {
+        $vw = 'print';
+        $report = "print-reject";
         $PendaftaranBeasiswa = PendaftaranBeasiswa::where("status", "Ditolak")
             ->with([
                 "mahasiswa", "beasiswa"
             ])->orderBy("id", "desc")->get();
-        return view('page.Beasiswa.show_pengajuan', compact('PendaftaranBeasiswa'));
+        return view('page.Beasiswa.show_pengajuan', compact('PendaftaranBeasiswa', 'vw', 'report'));
+    }
+
+    public function getPrintAccept()
+    {
+
+        $PendaftaranBeasiswa = PendaftaranBeasiswa::where("status", "Diterima")
+            ->with([
+                "mahasiswa", "beasiswa"
+            ])->orderBy("id", "desc")->get();
+        return view('page.Beasiswa.peint_pengajuan', compact('PendaftaranBeasiswa'));
+    }
+    public function getPrintReject()
+    {
+
+        $PendaftaranBeasiswa = PendaftaranBeasiswa::where("status", "Ditolak")
+            ->with([
+                "mahasiswa", "beasiswa"
+            ])->orderBy("id", "desc")->get();
+        return view('page.Beasiswa.peint_pengajuan', compact('PendaftaranBeasiswa'));
     }
 
     public function formPengajuan()
@@ -100,5 +126,18 @@ class PendaftaranBeasiswaController extends Controller
         $pendaftaranBeasiswa->catatan = $request->catatan;
         $pendaftaranBeasiswa->save();
         return redirect()->route('beasiswa.index')->with('success', 'Update Berhasil');
+    }
+
+    public function edit(PendaftaranBeasiswa $pendaftaranBeasiswa)
+    {
+        $beasiswaList = Beasiswa::all();
+        return view('page.Beasiswa.edit_pengajuan', compact('pendaftaranBeasiswa', 'beasiswaList'));
+    }
+
+    public function update()
+    {
+    }
+    public function destroy()
+    {
     }
 }

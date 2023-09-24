@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Mahasiswa;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class MahasiswaController extends Controller
 {
@@ -62,37 +63,76 @@ class MahasiswaController extends Controller
     }
 
 
-    public function edit(Mahasiswa $mahasiswa)
+    public function edit($id)
     {
+        $mahasiswa = Mahasiswa::where("id", $id)
+            ->with("user")->first();
         return view('page.Mhs.edit', compact('mahasiswa'));
     }
 
-    public function update(Request $request, Mahasiswa $mahasiswa)
+    public function update(Request $request, $id)
     {
         $request->validate([
-            'nim' => 'required|unique:mahasiswa,nim,' . $mahasiswa->id,
+            'nim' => 'required|max:10|unique:mahasiswa,nim,' . $id,
             'nama' => 'required|max:100',
             'jenis_kelamin' => 'required|max:10',
             'tanggal_lahir' => 'required|date',
             'alamat' => 'required|max:255',
             'telepon' => 'required|max:15',
             'program_studi' => 'required|max:50',
-            'fakultas' => 'required|max:50',
             'semester' => 'required|integer',
             'ipk' => 'required|numeric|between:0,4.00',
-            'status' => 'required|in:Aktif,Nonaktif',
         ]);
 
-        $mahasiswa->update($request->all());
+        // Update the user record
+        $mahasiswa = Mahasiswa::find($id);
+        $mahasiswa->user->update([
+            'nama' => $request->input('nama'),
+            'username' => $request->input('username'),
+        ]);
 
-        return redirect()->route('page.Mhs.show', $mahasiswa)->with('success', 'Data mahasiswa berhasil diperbarui.');
+        // Check if a new password is provided and update it
+        if ($request->has('password') && !empty($request->password)) {
+            $mahasiswa->user->update([
+                'password' => Hash::make($request->input('password')),
+            ]);
+        }
+
+        // Check if a new image file is provided and update it
+        if ($request->hasFile('image')) {
+            $brosurFile = $request->file('image');
+            $brosurName = $brosurFile->getClientOriginalName();
+            $brosurFile->move(public_path('user_images'), $brosurName);
+            $user_images = 'user_images/' . $brosurName;
+            $mahasiswa->user->update([
+                'image' => $user_images,
+            ]);
+        }
+
+        // Update the Mahasiswa model attributes
+        $mahasiswa->update([
+            'nim' => $request->input('nim'),
+            'jenis_kelamin' => $request->input('jenis_kelamin'),
+            'tanggal_lahir' => $request->input('tanggal_lahir'),
+            'alamat' => $request->input('alamat'),
+            'telepon' => $request->input('telepon'),
+            'program_studi' => $request->input('program_studi'),
+            'semester' => $request->input('semester'),
+            'ipk' => $request->input('ipk'),
+            'status' => $request->input('status'), // If you have a status field
+        ]);
+        if (auth()->user()->role == 'mahasiswa') {
+            return redirect()->route('profil')->with('success', 'Data mahasiswa berhasil diperbarui.');
+        }
+        return redirect()->route('show_mhs')->with('success', 'Data mahasiswa berhasil diperbarui.');
     }
 
-    public function destroy(Mahasiswa $mahasiswa)
+    public function destroy($id)
     {
+        $mahasiswa = Mahasiswa::find($id);
         $mahasiswa->delete();
         $mahasiswa->user->delete();
 
-        return redirect()->route('page.Mhs.index')->with('success', 'Mahasiswa berhasil dihapus.');
+        return redirect()->route('show_mhs')->with('success', 'Data mahasiswa berhasil dihapus.');
     }
 }

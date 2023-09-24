@@ -51,10 +51,10 @@
                                     <td><span class="badge badge-success">{{ $mahasiswa->status }}</span></td>
                                     <td>
                                         <div style="width:100px; flex; justify-content: space-between; align-item:center">
-                                            <a class="text-success" href="/mhs/edit"
+                                            <a class="text-success" href="/mhs/edit/{{ $mahasiswa->id }}"
                                                 style="font-size: 1.3rem; margin-right:.5rem ">
                                                 <i class="fa fa-edit"></i></a>
-                                            <a class="text-danger" href=""
+                                            <a class="text-danger" href="/mhs/destroy/{{ $mahasiswa->id }}"
                                                 style="font-size: 1.3rem; margin-left:.5rem ">
                                                 <i class="fa fa-trash"></i></a>
                                         </div>

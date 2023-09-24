@@ -12,7 +12,7 @@
     <link href="{{ asset('website') }}/img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -25,9 +25,9 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ asset('website') }}/css/style.css" rel="stylesheet">
     @yield('style')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.4.0/css/fixedHeader.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+    <link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/fixedheader/3.4.0/css/fixedHeader.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" rel="stylesheet">
 
 </head>
 
@@ -37,7 +37,7 @@
 
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
             <div class="col-lg-4">
-                <a href="" class="text-decoration-none">
+                <a class="text-decoration-none" href="">
                     <span class="h1 text-uppercase text-primary bg-dark px-2">BEASISWA</span>
                     <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">UNIKS</span>
                 </a>
@@ -52,24 +52,24 @@
         <div class="row px-xl-5">
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
-                    <a href="" class="text-decoration-none d-block d-lg-none">
+                    <a class="text-decoration-none d-block d-lg-none" href="">
                         <span class="h1 text-uppercase text-dark bg-light px-2">BEASISWA</span>
                         <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">UNIKS</span>
                     </a>
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <button class="navbar-toggler" data-target="#navbarCollapse" data-toggle="collapse" type="button">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="/" class="nav-item nav-link active">Home</a>
-                            <a href="/infobeasiswa" class="nav-item nav-link">Info Beasiswa</a>
-                            <a href="/berita" class="nav-item nav-link">Berita</a>
-                            <a href="/about" class="nav-item nav-link">About</a>
-                            <a href="/kontak" class="nav-item nav-link">Contact</a>
+                            <a class="nav-item nav-link active" href="/">Home</a>
+                            <a class="nav-item nav-link" href="/infobeasiswa">Info Beasiswa</a>
+                            <a class="nav-item nav-link" href="/berita">Berita</a>
+                            <a class="nav-item nav-link" href="/about">About</a>
+                            <a class="nav-item nav-link" href="/kontak">Contact</a>
                             <div class="navbar-nav mr-auto p-2">
-                                <a href="/login" class="btn btn-primary">Login</a>
+                                <a class="btn btn-primary" href="/login">Login</a>
                                 &nbsp;&nbsp;
-                                <a href="/daftar" class="btn btn-secondary">Daftar</a>
+                                {{-- <a href="/daftar" class="btn btn-secondary">Daftar</a> --}}
 
                             </div>
 
@@ -93,7 +93,7 @@
 
     <!-- Back to Top -->
 
-    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    <a class="btn btn-primary back-to-top" href="#"><i class="fa fa-angle-double-up"></i></a>
 
     @yield('script')
 

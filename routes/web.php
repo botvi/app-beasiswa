@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeasiswaController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -38,16 +39,17 @@ Route::get('/logout', [\App\Http\Controllers\LoginController::class, 'logout'])-
 
 route::group(['middleware' => ['auth']], function () {
     Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/profil', [\App\Http\Controllers\HomeController::class, 'profil']);
-
+    Route::get('/profil', [\App\Http\Controllers\HomeController::class, 'profil'])->name('profil');
 });
 
 
 route::group(['prefix' => 'mhs'], function () {
     Route::get('/', [\App\Http\Controllers\MahasiswaController::class, 'show'])->name('show_mhs');
     Route::get('/create', [\App\Http\Controllers\MahasiswaController::class, 'create'])->name('mhs.create');
-    Route::get('/edit', [\App\Http\Controllers\MahasiswaController::class, 'edit'])->name('mhs.edit');
+    Route::get('/edit/{id}', [\App\Http\Controllers\MahasiswaController::class, 'edit'])->name('mhs.edit');
     Route::post('/store', [\App\Http\Controllers\MahasiswaController::class, 'store'])->name('mhs.store');
+    Route::post('/update/{id}', [\App\Http\Controllers\MahasiswaController::class, 'update'])->name('mhs.update');
+    Route::get('/destroy/{id}', [\App\Http\Controllers\MahasiswaController::class, 'destroy'])->name('mhs.destroy');
 });
 
 Route::group([
@@ -70,10 +72,17 @@ route::group(['prefix' => 'pengajuan'], function () {
 
     Route::post('/update/{id}/acc', [\App\Http\Controllers\PendaftaranBeasiswaController::class, 'updateAcc'])->name('pendaftaran_beasiswa.acc');
     Route::post('/update/{id}/rej', [\App\Http\Controllers\PendaftaranBeasiswaController::class, 'updateRej'])->name('pendaftaran_beasiswa.rej');
+
+    Route::get('/{pendaftaranBeasiswa}/edit', [\App\Http\Controllers\PendaftaranBeasiswaController::class, 'edit'])->name('pendaftaran_beasiswa.edit');
+    Route::post('/{pendaftaranBeasiswa}/update', [\App\Http\Controllers\PendaftaranBeasiswaController::class, 'update'])->name('pendaftaran_beasiswa.update');
+    Route::post('/{pendaftaranBeasiswa}/destroy', [\App\Http\Controllers\PendaftaranBeasiswaController::class, 'destroy'])->name('pendaftaran_beasiswa.destroy');
 });
 Route::get('/mhs-form', [\App\Http\Controllers\PendaftaranBeasiswaController::class, 'formPengajuanMhs'])->name('pendaftaran_beasiswa.form-pengajuan-mhs');
 Route::get('/accept', [\App\Http\Controllers\PendaftaranBeasiswaController::class, 'getAccept'])->name('pendaftaran_beasiswa.acc');
 Route::get('/reject', [\App\Http\Controllers\PendaftaranBeasiswaController::class, 'getReject'])->name('pendaftaran_beasiswa.rej');
+
+Route::get('/print-accept', [\App\Http\Controllers\PendaftaranBeasiswaController::class, 'getPrintAccept'])->name('pendaftaran_beasiswa.acc');
+Route::get('/print-reject', [\App\Http\Controllers\PendaftaranBeasiswaController::class, 'getPrintReject'])->name('pendaftaran_beasiswa.rej');
 
 
 
@@ -84,4 +93,8 @@ route::group(['prefix' => 'beasiswa'], function () {
     Route::get('/{id}/id', [\App\Http\Controllers\BeasiswaController::class, 'getId'])->name('beasiswa.getId');
     Route::get('/create', [\App\Http\Controllers\BeasiswaController::class, 'create'])->name('beasiswa.create');
     Route::post('/store', [\App\Http\Controllers\BeasiswaController::class, 'store'])->name('beasiswa.store');
+
+    Route::get('{beasiswa}/edit', [BeasiswaController::class, 'edit'])->name('beasiswa.edit');
+    Route::put('/beasiswa/{beasiswa}', [BeasiswaController::class, 'update'])->name('beasiswa.update');
+    Route::get('{beasiswa}/destroy', [BeasiswaController::class, 'destroy'])->name('beasiswa.destroy');
 });

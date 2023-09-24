@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('nama');
             $table->string('username')->unique();
             $table->string('password');
-            $table->string('image')->nullable();
             $table->string('role');
+            $table->string('image')->default("user_images/usr.png")->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

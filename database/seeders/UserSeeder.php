@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
             "username" => "admin",
             "password" => bcrypt('password'),
             "role" => "admin",
-
+            "image" => "user_images/usr.png"
         ]);
     }
 }

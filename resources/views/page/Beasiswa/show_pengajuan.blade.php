@@ -12,8 +12,11 @@
             <div class="card-body">
                 <div style="display: flex; justify-content: space-between">
                     <h4 class="card-title">Data Pengajuan</h4>
-                    @if (auth()->user()->role == 'admin')
+                    @if (auth()->user()->role == 'admin' && $vw == 'pengajuan')
                         <a href="/pengajuan/form-pengajuan"><i class="fa fa-plus"></i> Form Pengajuan</a>
+                    @endif
+                    @if (auth()->user()->role == 'admin' && $vw == 'print')
+                        <a href="/{{ $report }}" target="_blank"><i class="fa fa-print"></i> Print</a>
                     @endif
                 </div>
                 <div class="table-responsive pt-3">
@@ -54,6 +57,16 @@
                                                 <button class="btn btn-danger btn-sm actions" data-action="rej"
                                                     data-id="{{ $item->id }}" data-target="#exampleModal"
                                                     data-toggle="modal">Tolak</button>
+                                            </div>
+                                        @elseif ($item->status == 'Dalam Proses' && auth()->user()->role != 'admin')
+                                            <div
+                                                style="width:100px; flex; justify-content: space-between; align-item:center">
+                                                <a class="text-success" href="/pengajuan/{{ $item->id }}/edit"
+                                                    style="font-size: 1.3rem; margin-right:.5rem ">
+                                                    <i class="fa fa-edit"></i></a>
+                                                <a class="text-danger" href="/pengajuan/{{ $item->id }}/destroy"
+                                                    style="font-size: 1.3rem; margin-left:.5rem ">
+                                                    <i class="fa fa-trash"></i></a>
                                             </div>
                                         @elseif($item->status != 'Dalam Proses' && auth()->user()->role != 'admin')
                                             <div>

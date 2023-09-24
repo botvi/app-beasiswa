@@ -48,17 +48,19 @@
                                     <td>{{ $item->status }}</td>
                                     @if (auth()->user()->role == 'mahasiswa')
                                         <td>
-                                            <a class="flex justufy-center item-center" href=""><i
-                                                    class="fa fa-link"></i> Ajukan</a>
+                                            {{-- <a class="flex justufy-center item-center" href=""><i
+                                                    class="fa fa-link"></i> Ajukan</a> --}}
                                         </td>
                                     @else
                                         <td>
                                             <div
                                                 style="width:100px; flex; justify-content: space-between; align-item:center">
-                                                <a class="text-success" href="/mhs/edit"
+                                                <a class="text-success"
+                                                    href="/pendaftaran_beasiswa/{{ $item->id }}/edit"
                                                     style="font-size: 1.3rem; margin-right:.5rem ">
                                                     <i class="fa fa-edit"></i></a>
-                                                <a class="text-danger" href=""
+                                                <a class="text-danger"
+                                                    href="/pendaftaran_beasiswa/{{ $item->id }}/destroy"
                                                     style="font-size: 1.3rem; margin-left:.5rem ">
                                                     <i class="fa fa-trash"></i></a>
                                             </div>

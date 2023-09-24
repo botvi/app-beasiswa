@@ -12,7 +12,7 @@
         @if (auth()->user()->role == 'admin')
             <li class="nav-item">
                 <a class="nav-link" href="/news">
-                    <i class="ti-user menu-icon"></i>
+                    <i class="ti-layout-grid2 menu-icon"></i>
                     <span class="menu-title">Berita</span>
                 </a>
             </li>

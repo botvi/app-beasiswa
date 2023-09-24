@@ -60,4 +60,47 @@ class BeasiswaController extends Controller
         // Redirect ke halaman lain atau tampilkan pesan sukses
         return redirect()->route('beasiswa.show')->with('success', 'Data Beasiswa berhasil disimpan.');
     }
+
+    public function edit(Beasiswa $beasiswa)
+    {
+        return view('page.Beasiswa.edit_beasiswa', compact('beasiswa'));
+    }
+
+    public function update(Request $request, Beasiswa $beasiswa)
+    {
+        $request->validate([
+            'judul' => 'required',
+            'sumber_beasiswa' => 'required',
+            'jumlah_penerima' => 'required|integer|min:1',
+            'tanggal_mulai' => 'required|date',
+            'tanggal_selesai' => 'required|date|after:tanggal_mulai',
+            'brosur' => 'nullable|file|mimes:pdf', // Add your desired validation rules for the file
+            'status' => 'required|in:Aktif,Nonaktif',
+            'deskripsi' => 'required',
+        ]);
+
+        // Update Beasiswa information
+        $beasiswa->update([
+            'judul' => $request->input('judul'),
+            'sumber_beasiswa' => $request->input('sumber_beasiswa'),
+            'jumlah_penerima' => $request->input('jumlah_penerima'),
+            'tanggal_mulai' => $request->input('tanggal_mulai'),
+            'tanggal_selesai' => $request->input('tanggal_selesai'),
+            'status' => $request->input('status'),
+            'deskripsi' => $request->input('deskripsi'),
+        ]);
+
+        // Handle file upload (if a new file is provided)
+        if ($request->hasFile('brosur')) {
+            $brosurPath = $request->file('brosur')->store('brosurs', 'public');
+            $beasiswa->update(['brosur' => $brosurPath]);
+        }
+
+        return redirect()->route('beasiswa.show')->with('success', 'Beasiswa updated successfully.');
+    }
+    public function destroy(Beasiswa $beasiswa)
+    {
+        $beasiswa->delete();
+        return redirect()->route('beasiswa.show')->with('success', 'Beasiswa deleted successfully.');
+    }
 }
